@@ -1,1 +1,1 @@
-# blog
+A simple personel blog with Asp.net Core 2.2
