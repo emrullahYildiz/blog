@@ -12096,11 +12096,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hasan\\Desktop\\simpleBlog\\blog\\blog.csproj",
+      "projectUniqueName": "C:\\Users\\hasan\\Desktop\\simpleBlog\\blog-1\\blog.csproj",
       "projectName": "blog",
-      "projectPath": "C:\\Users\\hasan\\Desktop\\simpleBlog\\blog\\blog.csproj",
+      "projectPath": "C:\\Users\\hasan\\Desktop\\simpleBlog\\blog-1\\blog.csproj",
       "packagesPath": "C:\\Users\\hasan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hasan\\Desktop\\simpleBlog\\blog\\obj\\",
+      "outputPath": "C:\\Users\\hasan\\Desktop\\simpleBlog\\blog-1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
