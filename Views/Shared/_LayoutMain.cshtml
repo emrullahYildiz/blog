@@ -47,22 +47,44 @@
     </nav>
     <!-- navigation bar end -->
     @RenderBody()
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
 
-    <p>blog</p>
+                    <!--fixed item of pagination-->
+                    <li class="page-item mr-3">
+                    <a class="page-link" href="#" aria-label="Önceki">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    </li>
 
-    <!--footer start-->
-    <footer class="mastfoot mt-auto bg-dark text-center fixed-bottom">
-        <div class="inner py-2">
-            <div class="row py-1">
-                <div class="col text-truncate text-white">
-                    <h4>Emrullah YILDIZ</h4>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+
+                    <!--fixed item of pagination-->
+                    <li class="page-item ml-3">
+                    <a class="page-link" href="#" aria-label="Sonraki">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+        <!--footer start-->
+        <footer class="mastfoot mt-auto bg-dark text-center">
+            <div class="inner py-2">
+                <div class="row py-1">
+                    <div class="col text-truncate text-white">
+                        <h4>Emrullah YILDIZ</h4>
+                    </div>
                 </div>
+                <span><i class="fab fa-github fa-2x px-1" style="color:white"></i></span>
+                <span><i class="far fa-envelope fa-2x px-1" style="color:white"></i></span>
+                <span><i class="fab fa-linkedin-in fa-2x px-1" style="color:white"></i></span>
             </div>
-            <span><i class="fab fa-github fa-2x px-1" style="color:white"></i></span>
-            <span><i class="far fa-envelope fa-2x px-1" style="color:white"></i></span>
-            <span><i class="fab fa-linkedin-in fa-2x px-1" style="color:white"></i></span>
-        </div>
-    </footer>
-    <!-- footer end -->
+        </footer>
+        <!-- footer end -->
 </body>
 </html>
