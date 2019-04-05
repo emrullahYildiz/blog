@@ -56,3 +56,5 @@ C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\blog.dll
 C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\blog.pdb
 C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\blog.csproj.CopyComplete
 C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutMain.g.cshtml.cs
+C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\Razor\Views\Article\Index.g.cshtml.cs
+C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutArticle.g.cshtml.cs
