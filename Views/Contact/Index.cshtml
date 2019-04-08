@@ -1,3 +1,41 @@
 @{
     Layout = "_LayoutArticle";
+    //this page share article template
 }
+<div class="container mt-2 mb-1 container-background py-2">
+    <form style="width:100%">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-2">
+                    <label for="nameSurname" class="mt-1"><strong>Adınız Soyadınız</strong></label>
+                </div>
+                <div class="col-6">
+                    <input type="text" id="nameSurname" class="form-control form-control-md" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-2">
+                    <label for="mailAddress" class="mt-1"><strong>Mail Adresiniz</strong></label>
+                </div>
+                <div class="col-6">
+                    <input type="mail" id="mailAddress" placeholder="user@mail.com" class="form-control form-control-md" required>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-2">
+                    <label for="message"><strong>Mesajınız</strong></label>
+                </div>
+                <div class="col-6">
+                    <textarea id="message" class="form-control form-control-md" rows="8" style="resize:none" required></textarea>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-8">
+                    <div class="row justify-content-end">
+                        <button class="btn btn-dark mr-3" type="submit">Gönder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
