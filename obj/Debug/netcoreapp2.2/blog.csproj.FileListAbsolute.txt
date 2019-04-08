@@ -58,3 +58,4 @@ C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\blog.csproj.Cop
 C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutMain.g.cshtml.cs
 C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\Razor\Views\Article\Index.g.cshtml.cs
 C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutArticle.g.cshtml.cs
+C:\Users\hasan\Desktop\simpleBlog\blog-1\obj\Debug\netcoreapp2.2\Razor\Views\Contact\Index.g.cshtml.cs
