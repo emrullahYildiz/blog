@@ -1,5 +1,7 @@
-﻿@{
+﻿@model HomeViewModel
+@{
     Layout = "_LayoutMain";
+    ViewData["categoryList"] = Model.categories;//Data pass to _LayoutMain.cshtml
 }
 
 <div class="container mt-2 mb-5 container-background border rounded">
