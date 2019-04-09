@@ -6,6 +6,12 @@
 
 <div class="container mt-2 mb-5 container-background border rounded">
     <div class="row">
+
+        @foreach (var item in Model.articles)
+        {
+            @await Component.InvokeAsync("ArticlePreview",item)
+        }
+        <!--
         <div class="col-sm-12 col-md-6 col-lg-4 py-1">
             <div class="card">
                 <img class="card-img-top" src="/images/a.png" alt="Card image cap">
@@ -51,35 +57,7 @@
             </div>
         </div>
 
-                <div class="col-sm-12 col-md-6 col-lg-4 py-1">
-            <div class="card">
-                <img class="card-img-top" src="/images/a.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a tortor id mauris fringilla pharetra.
-                        Aliquam lectus turpis, maximus et porttitor non, ullamcorper a nisi. Phasellus vel porttitor nisl.
-                        Nulla a eleifend quam. Nam at diam ultrices, imperdiet tellus vel, tempus diam. Curabitur nec massa turpis.
-                        In pharetra volutpat pellentesque. Morbi gravida ipsum in mollis aliquet. In vitae tellus sed urna laoreet gravida.
-                    </p>
-                </div>
-            </div>
-        </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 py-1">
-            <div class="card">
-                <img class="card-img-top" src="/images/a.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a tortor id mauris fringilla pharetra.
-                        Aliquam lectus turpis, maximus et porttitor non, ullamcorper a nisi. Phasellus vel porttitor nisl.
-                        Nulla a eleifend quam. Nam at diam ultrices, imperdiet tellus vel, tempus diam. Curabitur nec massa turpis.
-                        In pharetra volutpat pellentesque. Morbi gravida ipsum in mollis aliquet. In vitae tellus sed urna laoreet gravida.
-                    </p>
-                </div>
-            </div>
-        </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 py-1">
+        <div class="col-sm-12 col-md-6 col-lg-4 py-1">
             <div class="card">
                 <img class="card-img-top" src="/images/a.png" alt="Card image cap">
                 <div class="card-body">
@@ -94,8 +72,36 @@
             </div>
         </div>
         
+        <div class="col-sm-12 col-md-6 col-lg-4 py-1">
+            <div class="card">
+                <img class="card-img-top" src="/images/a.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a tortor id mauris fringilla pharetra.
+                        Aliquam lectus turpis, maximus et porttitor non, ullamcorper a nisi. Phasellus vel porttitor nisl.
+                        Nulla a eleifend quam. Nam at diam ultrices, imperdiet tellus vel, tempus diam. Curabitur nec massa turpis.
+                        In pharetra volutpat pellentesque. Morbi gravida ipsum in mollis aliquet. In vitae tellus sed urna laoreet gravida.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-
+        <div class="col-sm-12 col-md-6 col-lg-4 py-1">
+            <div class="card">
+                <img class="card-img-top" src="/images/a.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a tortor id mauris fringilla pharetra.
+                        Aliquam lectus turpis, maximus et porttitor non, ullamcorper a nisi. Phasellus vel porttitor nisl.
+                        Nulla a eleifend quam. Nam at diam ultrices, imperdiet tellus vel, tempus diam. Curabitur nec massa turpis.
+                        In pharetra volutpat pellentesque. Morbi gravida ipsum in mollis aliquet. In vitae tellus sed urna laoreet gravida.
+                    </p>
+                </div>
+            </div>
+        </div>
+        -->
     </div>
     
 </div>
