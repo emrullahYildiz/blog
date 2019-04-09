@@ -12,13 +12,16 @@ namespace blog.Controllers
     public class HomeController : Controller
     {
         private readonly ICategory categoryContext;
-        public HomeController(ICategory categoryContext){
+        private readonly IArticle articleContext;
+        public HomeController(ICategory categoryContext,IArticle articleContext){
             this.categoryContext = categoryContext;
+            this.articleContext = articleContext;
         }
         public IActionResult Index()
         {
             HomeViewModel homeViewModel = new HomeViewModel{
-                categories = categoryContext.getCategories()
+                categories = categoryContext.getCategories(),
+                articles = articleContext.getArticles(6)
             };
             
             return View(homeViewModel);
