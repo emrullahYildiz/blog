@@ -1,0 +1,12 @@
+@model Article
+<div class="col-sm-12 col-md-6 col-lg-4 py-1">
+    <div class="card">
+        <img class="card-img-top" src="@Model.ArticleImage" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Model.ArticleHead</h5>
+            <p class="card-text">
+                @Model.ArticleAbstract
+             </p>
+        </div>
+    </div>
+</div>
