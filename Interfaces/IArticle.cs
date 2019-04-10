@@ -9,5 +9,6 @@ namespace blog.Interfaces{
         List<Article> getArticles(int page,int articleCount);
         int getArticleCount();
         List<Article> searchArticle(string keywords);
+        List<Article> getArticleByCategory(int categoryId);
     }
 }
