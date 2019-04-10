@@ -1,72 +1,48 @@
+@model ArticleIndexViewModel
 @{
     Layout = "_LayoutArticle";
+    ViewData["categoryList"] = Model.categories;
 }
 
 <div class="container mt-2 mb-1 container-background">
-    <!-- Article Head -->
-    <div class="row"><h3 class="mx-2 my-3">Article Head</h3></div>
+    <!-- Article Head start -->
+    <div class="row"><h3 class="mx-2 my-3">@Model.articleContent.ArticleHead</h3></div>
+    <!-- Article Head start -->
 
     <!--Article Abstract start-->
-    <div class="row">
-        <p class="mx-2 my-3">Esse ea ut pariatur et. Esse nulla aute anim labore amet est est eiusmod qui. Do et ad dolore nostrud pariatur irure occaecat reprehenderit nostrud nisi in sit. Do esse laboris incididunt non do sit id nostrud amet consectetur labore.
-        Excepteur amet tempor sit sunt do. Sit magna irure cupidatat sit ut consequat sint id. Tempor id quis qui aliquip dolor ipsum consectetur tempor non dolore magna. Excepteur culpa ad ex sit ad. Labore ut cupidatat cupidatat eu in consectetur exercitation laboris do dolor fugiat incididunt. Amet commodo qui ipsum ullamco qui anim veniam irure sint magna ipsum Lorem.</p>
-    </div>
+    <div class="row px-2 py-3">@Model.articleContent.ArticleAbstract</div>
     <!-- Article Abstract end-->
 
-    <!--Article Start-->
-    <div class="row p-3">
-        <p>Veniam irure dolor culpa cillum. Ex eu veniam adipisicing proident. Eu dolor ad do et eiusmod reprehenderit laborum Lorem irure dolore. Fugiat reprehenderit ullamco sint elit veniam nostrud commodo aliqua. Do sunt velit amet ut ad deserunt. Veniam magna reprehenderit do non dolor.</p>
-        <p>Reprehenderit dolor eu occaecat ut veniam. Lorem consectetur officia enim dolor fugiat dolore cupidatat anim qui quis anim. Cupidatat fugiat in exercitation esse deserunt. Laboris eu magna ea minim adipisicing incididunt. Reprehenderit nisi occaecat laborum duis sint tempor.</p>
-        <p>Amet minim sit sint culpa sit incididunt enim anim exercitation. Id aute non incididunt pariatur ut eu qui ipsum magna ipsum excepteur ullamco. Amet est excepteur do elit et enim labore. Dolore laborum labore ut tempor amet duis duis. Proident anim quis commodo laboris ea ea excepteur anim mollit. Ut velit ut ut magna do esse minim voluptate.</p>
-        <p>Amet minim sit sint culpa sit incididunt enim anim exercitation. Id aute non incididunt pariatur ut eu qui ipsum magna ipsum excepteur ullamco. Amet est excepteur do elit et enim labore. Dolore laborum labore ut tempor amet duis duis. Proident anim quis commodo laboris ea ea excepteur anim mollit. Ut velit ut ut magna do esse minim voluptate.</p>
-        <p>Amet minim sit sint culpa sit incididunt enim anim exercitation. Id aute non incididunt pariatur ut eu qui ipsum magna ipsum excepteur ullamco. Amet est excepteur do elit et enim labore. Dolore laborum labore ut tempor amet duis duis. Proident anim quis commodo laboris ea ea excepteur anim mollit. Ut velit ut ut magna do esse minim voluptate.</p>
-    </div>
+    <!--Article content Start-->
+    <div class="row p-3">@Model.articleContent.ArticleContent</div>
+    <!--Article content end-->
 </div>
 
 <!-- Comment block -->
 <div class="container">
     <!-- There is no comment -->
-    <div class="row justify-content-center">
+    @if(Model.articleContent.Comment.Count == 0){
+        <div class="row justify-content-center">
             <h3>There is no comment here.</h3>
-    </div>
+        </div>
+    }
 
-    <!-- Comment block start-->
-    <div class="row my-2 border-bottom border-dark">
-        <div class="col-2 col-lg-1 justify-content-center">
-            <i class="fas fa-user-tie fa-3x align-middle"></i>
+    @foreach (var item in Model.articleContent.Comment)
+    {
+        <!-- Comment block start-->
+        <div class="row my-2 border-bottom border-dark">
+            <div class="col-2 col-lg-1 justify-content-center">
+                <i class="fas fa-user-tie fa-3x align-middle"></i>
+            </div>
+            <div class="col-10 col-lg-11">
+                <p class="py-0 my-0"><strong>@item.CommentFullname</strong></p>
+                <p class="my-0 py-0">@item.CommentContent</p>
+                <span class="border-bottom-1"></span>
+            </div>
         </div>
-        <div class="col-10 col-lg-11">
-            here is a comment
-            <span class="border-bottom-1"></span>
-        </div>
-    </div>
-    <!-- Comment block end -->
-
-    <!-- Comment block start-->
-    <div class="row my-2 border-bottom border-dark">
-        <div class="col-2 col-lg-1 justify-content-center">
-            <i class="fas fa-user-tie fa-3x align-middle"></i>
-        </div>
-        <div class="col-10 col-lg-11">
-            here is a comment
-            <span class="border-bottom-1"></span>
-        </div>
-    </div>
-    <!-- Comment block end -->
-
-    <!-- Comment block start-->
-    <div class="row my-2 border-bottom border-dark">
-        <div class="col-2 col-lg-1 justify-content-center">
-            <i class="fas fa-user-tie fa-3x align-middle"></i>
-        </div>
-        <div class="col-10 col-lg-11">
-            here is a comment
-            <span class="border-bottom-1"></span>
-        </div>
-    </div>
-    <!-- Comment block end -->
-
-    <!-- Comment form block -->
+        <!-- Comment block end -->
+    }
+    <!-- Comment form block start -->
     <div class="row mt-3">
         <form style="width:100%">
             <div class="form-group">
@@ -78,6 +54,16 @@
                         <input type="text" class="form-control form-control-sm" id="userName" required>
                     </div>
                 </div>
+
+                <div class="row my-2">
+                    <div class="col-2">
+                        <label for="mailAddress"><strong>Mail adresiniz</strong></label>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control form-control-sm" id="mailAddress" placeholder="Bu alanın doldurulması opsiyoneldir.">
+                    </div>
+                </div>
+
                 <div class="row my-2">
                     <div class="col-2">
                         <label for="comment"><strong>Yorumunuz</strong></label>
@@ -96,4 +82,6 @@
             </div>
         </form>
     </div>
+    <!-- Comment form block end -->
+
 </div>
