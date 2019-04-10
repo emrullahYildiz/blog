@@ -38,6 +38,15 @@ namespace blog.Controllers
             return View(homeViewModel);
         }
 
+        [HttpPost]
+        public IActionResult ArticleSearch(string keywords){
+            ArticleSearchViewModel articleSearchViewModel = new ArticleSearchViewModel{
+                categories = categoryContext.getCategories(),//For navigation bar
+                articles = articleContext.searchArticle(keywords)//Search article
+            };
+            return View(articleSearchViewModel);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
