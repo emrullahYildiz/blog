@@ -1,0 +1,26 @@
+@model ArticleSearchViewModel
+@{
+    Layout = "_LayoutMain";
+    ViewData["categoryList"] = Model.categories;//Data pass to _LayoutMain.cshtml
+}
+
+<div class="container mt-2 mb-5 container-background border rounded">
+    <div class="row">
+        @foreach (var item in Model.articles)
+        {
+            @await Component.InvokeAsync("ArticlePreview",item)
+        }
+        @if(Model.articles.Count == 0){
+
+            <div class="col-12 my-2">
+                <h3 class="text-center"><strong>Hiçbir sonuç bulunamadı.</strong></h3>
+            </div>
+
+            <div class="col-6 mx-auto">
+                <div class="row justify-content-center mb-5 pb-b">
+                    <i class="far fa-grin-beam-sweat fa-9x"></i>
+                </div>
+            </div>
+        }
+    </div>
+</div>
