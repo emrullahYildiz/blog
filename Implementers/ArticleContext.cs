@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using blog.Interfaces;
 using blog.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace blog.Implementers{
     public class ArticleContext : IArticle
@@ -18,7 +19,13 @@ namespace blog.Implementers{
                         databaseContext.Articles.Where(query => query.CategoryID == categoryId).ToList();
             return articles;
         }
-
+        public Article getArticleById(int articleId)
+        {
+            Article article = databaseContext.Articles
+                                .Include(q => q.Comment)
+                                .SingleOrDefault(query => query.ArticleID == articleId);;
+            return article;
+        }
         public int getArticleCount()
         {
            return databaseContext.Articles.Count();
