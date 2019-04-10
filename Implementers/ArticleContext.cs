@@ -12,6 +12,13 @@ namespace blog.Implementers{
             this.databaseContext = databaseContext;
         }
 
+        public List<Article> getArticleByCategory(int categoryId)
+        {
+            List<Article> articles = 
+                        databaseContext.Articles.Where(query => query.CategoryID == categoryId).ToList();
+            return articles;
+        }
+
         public int getArticleCount()
         {
            return databaseContext.Articles.Count();
