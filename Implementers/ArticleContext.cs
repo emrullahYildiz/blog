@@ -43,5 +43,12 @@ namespace blog.Implementers{
             }
             return articles;
         }
+
+        public List<Article> searchArticle(string keywords)
+        {
+            List<Article> articles = 
+                databaseContext.Articles.Where(query => query.ArticleHead.Contains(keywords)).ToList();
+            return articles;
+        }
     }
 }
