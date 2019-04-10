@@ -30,9 +30,16 @@
                     Kategoriler
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Kategori 1</a>
-                        <a class="dropdown-item" href="#">Kategori 2</a>
-                        <a class="dropdown-item" href="#">Kategori 3</a>
+                        @{
+                            var categoryList = ViewData["categoryList"] as List<Category>;
+                            foreach (var item in categoryList)
+                            {
+                                <a class="dropdown-item" href="/Home/Category/@item.CategoryID">@item.CategoryName</a>
+                            }
+                            if(categoryList.Count < 1){
+                                <a class="dropdown-item" href="#">Kategori bulunamadı.</a>
+                            }
+                        }
                     </div>
                 </li>
                 <li class="nav-item active">
@@ -40,23 +47,31 @@
                 </li>
             </ul>
         </div>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Makale Ara" aria-label="Search">
+        <form class="form-inline" action="/Home/ArticleSearch" method="post">
+            <input class="form-control mr-sm-2" type="search" name="keywords" placeholder="Makale Ara" aria-label="Search">
             <button class="btn btn-outline-light my-sm-0" type="submit">Ara</button>
         </form>
     </nav>
     <!-- navigation bar end -->
     @RenderBody()
     <!--footer start-->
-    <footer class="footer fixed-bottom mt-auto bg-dark text-center">
+    <footer class="mastfoot mt-auto bg-dark text-center">
         <div class="inner py-2">
             <div class="row py-1">
                 <div class="col text-truncate text-white">
                     <h4>Emrullah YILDIZ</h4>
                 </div>
             </div>
-            <span><i class="fab fa-github fa-2x px-1" style="color:white"></i></span>
-            <span><i class="far fa-envelope fa-2x px-1" style="color:white"></i></span>
+            <span>
+                <a target="_blank" href="https://github.com/emrullahYildiz">
+                    <i class="fab fa-github fa-2x px-1" style="color:white"></i>
+                </a>
+            </span>
+            <span>
+                <a href="mailto:yildiz.emrullah@outlook.com?Subject=Hello%20again" target="_top">
+                    <i class="far fa-envelope fa-2x px-1" style="color:white"></i>
+                </a>
+            </span>
             <span><i class="fab fa-linkedin-in fa-2x px-1" style="color:white"></i></span>
         </div>
     </footer>
