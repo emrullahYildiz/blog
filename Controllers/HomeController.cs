@@ -17,13 +17,24 @@ namespace blog.Controllers
             this.categoryContext = categoryContext;
             this.articleContext = articleContext;
         }
+
         public IActionResult Index()
         {
             HomeViewModel homeViewModel = new HomeViewModel{
                 categories = categoryContext.getCategories(),
-                articles = articleContext.getArticles(6)
+                articles = articleContext.getArticles(6),
+                currentPageNumber = 0
             };
-            
+            return View(homeViewModel);
+        }
+
+        [HttpGet("/Home/Index/{page}")]
+        public IActionResult Index(int page){
+                HomeViewModel homeViewModel = new HomeViewModel{
+                    categories = categoryContext.getCategories(),
+                    articles = articleContext.getArticles(page,6),//to show 6 post, pass 6 post
+                    currentPageNumber = page
+                };
             return View(homeViewModel);
         }
 
