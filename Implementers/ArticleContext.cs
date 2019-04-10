@@ -11,6 +11,12 @@ namespace blog.Implementers{
         public ArticleContext(DatabaseContext databaseContext){
             this.databaseContext = databaseContext;
         }
+
+        public int getArticleCount()
+        {
+           return databaseContext.Articles.Count();
+        }
+        //Get all article
         public List<Article> getArticles(int count = 0)
         {
             //if we want first n row , assign a value to count variable
@@ -19,6 +25,21 @@ namespace blog.Implementers{
                 articles = databaseContext.Articles.ToList();
             }else{
                 articles = databaseContext.Articles.Take(count).ToList();
+            }
+            return articles;
+        }
+        
+        public List<Article> getArticles(int page,int articleCount){
+            List<Article> articles;
+            try{
+                //İf article is avaible in database between page*6 and page*6 + articleCount
+                //page*6 = Every page has 6 post
+                //example if page = 5 5*6 = 30 6th page starts 30th post
+                articles = databaseContext.Articles.Skip(page*6).Take(articleCount).ToList()
+                         ??databaseContext.Articles.SkipLast(6).ToList();
+            }catch{
+                //not avaible
+                articles = databaseContext.Articles.Take(6).ToList();
             }
             return articles;
         }
