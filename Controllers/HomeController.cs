@@ -47,6 +47,16 @@ namespace blog.Controllers
             return View(articleSearchViewModel);
         }
 
+        /* Article by category share same page with article search result view */
+        [HttpGet("/Home/Category/{categoryId}")]
+        public IActionResult ArticleSearch(int categoryId){
+            ArticleSearchViewModel articleSearchViewModel = new ArticleSearchViewModel{
+                categories = categoryContext.getCategories(),
+                articles = articleContext.getArticleByCategory(categoryId)
+            };
+            return View(articleSearchViewModel);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
