@@ -44,14 +44,14 @@
     }
     <!-- Comment form block start -->
     <div class="row mt-3">
-        <form style="width:100%">
+        <form method="post" action="/Article/Index" style="width:100%">
             <div class="form-group">
                 <div class="row my-2">
                     <div class="col-2">
                         <label for="userName"><strong>Adınız Soyadınız:</strong></label>
                     </div>
                     <div class="col-6">
-                        <input type="text" class="form-control form-control-sm" id="userName" required>
+                        <input type="text" name="commentFullName" class="form-control form-control-sm" id="userName" required>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@
                         <label for="mailAddress"><strong>Mail adresiniz</strong></label>
                     </div>
                     <div class="col-6">
-                        <input type="text" class="form-control form-control-sm" id="mailAddress" placeholder="Bu alanın doldurulması opsiyoneldir.">
+                        <input type="text" name="commentMail" class="form-control form-control-sm" id="mailAddress" required>
                     </div>
                 </div>
 
@@ -69,7 +69,10 @@
                         <label for="comment"><strong>Yorumunuz</strong></label>
                     </div>
                     <div class="col-6">
-                        <textarea class="form-control" id="comment" rows="5" style="resize:none" required></textarea>
+                        <textarea name="commentContent" class="form-control" id="comment" rows="5" style="resize:none" required></textarea>
+                    </div>
+                    <div class="invisible">
+                        <input type="text" name="articleId" value="@Model.articleContent.ArticleID">
                     </div>
                 </div>
                 <div class="row my-2">
