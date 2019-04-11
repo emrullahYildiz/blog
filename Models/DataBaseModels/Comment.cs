@@ -6,6 +6,7 @@ namespace blog.Models{
         public string CommentFullname { get; set; }
         public string CommentContent { get; set; }
         public DateTime CommentDate { get; set; }
+        public string CommentMail { get; set; }
         public int ArticleID { get; set; }
         public Article Article { get; set;}
     }
