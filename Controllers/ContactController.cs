@@ -12,7 +12,7 @@ namespace blog.Controllers{
             this.contactContext = contactContex;
             this.categoryContext = categoryContext;
         }
-        public IActionResult Index(IContact contactContex){
+        public IActionResult Index(){
             ContactViewModel contactViewModel = new ContactViewModel{
                 categories = categoryContext.getCategories()
             };
