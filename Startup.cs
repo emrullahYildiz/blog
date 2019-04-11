@@ -38,7 +38,7 @@ namespace blog
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                 );
-
+            services.AddTransient<IComment, CommentContext>();
             services.AddTransient<ICategory, CategoryContext>();
             services.AddTransient<IArticle, ArticleContext>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
