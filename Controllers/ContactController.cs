@@ -7,5 +7,11 @@ namespace blog.Controllers{
             
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Index(string contactName,string contactMail,string contactMessage){
+
+            return View()
+        }
     }
 }
