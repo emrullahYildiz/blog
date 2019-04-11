@@ -6,11 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 namespace blog.Controllers{
     public class ArticleController:Controller{
         private readonly IArticle articleContext;
-        private readonly ICategory categoryContext;
+
         private readonly IComment commentContext;
         public ArticleController(IArticle articleContext,ICategory categoryContext,IComment commentContext){
             this.articleContext = articleContext;
-            this.categoryContext = categoryContext;
             this.commentContext = commentContext;
         }
         [HttpGet("/Article/Index/{articleId?}")]
@@ -18,7 +17,6 @@ namespace blog.Controllers{
         {
             ArticleIndexViewModel articleViewModel = new ArticleIndexViewModel{
                 articleContent = articleContext.getArticleById(articleId),
-                categories = categoryContext.getCategories()
             };
             return View(articleViewModel);
         }

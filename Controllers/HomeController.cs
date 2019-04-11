@@ -11,17 +11,14 @@ namespace blog.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ICategory categoryContext;
         private readonly IArticle articleContext;
         public HomeController(ICategory categoryContext,IArticle articleContext){
-            this.categoryContext = categoryContext;
             this.articleContext = articleContext;
         }
 
         public IActionResult Index()
         {
             HomeViewModel homeViewModel = new HomeViewModel{
-                categories = categoryContext.getCategories(),
                 articles = articleContext.getArticles(6),
                 currentPageNumber = 0
             };
@@ -31,7 +28,6 @@ namespace blog.Controllers
         [HttpGet("/Home/Index/{page}")]
         public IActionResult Index(int page){
                 HomeViewModel homeViewModel = new HomeViewModel{
-                    categories = categoryContext.getCategories(),
                     articles = articleContext.getArticles(page,6),//to show 6 post, pass 6 post
                     currentPageNumber = page
                 };
@@ -41,7 +37,6 @@ namespace blog.Controllers
         [HttpPost]
         public IActionResult ArticleSearch(string keywords){
             ArticleSearchViewModel articleSearchViewModel = new ArticleSearchViewModel{
-                categories = categoryContext.getCategories(),//For navigation bar
                 articles = articleContext.searchArticle(keywords)//Search article
             };
             return View(articleSearchViewModel);
@@ -51,7 +46,6 @@ namespace blog.Controllers
         [HttpGet("/Home/Category/{categoryId}")]
         public IActionResult ArticleSearch(int categoryId){
             ArticleSearchViewModel articleSearchViewModel = new ArticleSearchViewModel{
-                categories = categoryContext.getCategories(),
                 articles = articleContext.getArticleByCategory(categoryId)
             };
             return View(articleSearchViewModel);
