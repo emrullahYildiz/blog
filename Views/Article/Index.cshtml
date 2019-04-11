@@ -2,6 +2,7 @@
 @{
     Layout = "_LayoutArticle";
     ViewData["categoryList"] = Model.categories;
+    ViewData["pageTitle"] = "Makale -"+Model.articleContent.ArticleHead;
 }
 
 <div class="container mt-2 mb-1 container-background">
