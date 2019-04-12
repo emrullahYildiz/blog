@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using blog.Models;
 
 namespace blog.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20190411234140_old")]
+    partial class old
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,21 +32,6 @@ namespace blog.Migrations
                     b.HasKey("AboutID");
 
                     b.ToTable("About");
-                });
-
-            modelBuilder.Entity("blog.Models.AdminUser", b =>
-                {
-                    b.Property<int>("AdminUserID")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("UserName");
-
-                    b.Property<string>("UserPassword");
-
-                    b.HasKey("AdminUserID");
-
-                    b.ToTable("AdminUsers");
                 });
 
             modelBuilder.Entity("blog.Models.Article", b =>
