@@ -1,0 +1,46 @@
+@{
+    Layout = null;
+}
+<html>
+    <head>
+        <title>Admin Panel</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="row justify-content-center my-4">
+                    <form class="w-50">
+                        <div class="form-group rounded m-2 bg-light p-3">
+                        <div class="row justify-content-center my-3">
+                            <div class="col-4">
+                                <label for="userName"><strong>Kullanıcı Adı</strong></label>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-control form-control-md" id="userName" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center my-3">
+                            <div class="col-4">
+                                <label for="password"><strong>Şifre</strong></label>
+                            </div>
+                            <div class="col-6">
+                                <input class="form-control form-control-md" id="password" type="password" required>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center my-3">
+                            <div class="col-10">
+                                <div class="row justify-content-end">
+                                    <button type="submmit" class="btn btn-dark mr-3">Giriş Yap</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </form>
+                
+            </div>
+        </div>
+    </body>
+</html>
