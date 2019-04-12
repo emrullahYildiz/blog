@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace blog.Models{
@@ -11,5 +12,6 @@ namespace blog.Models{
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<About> About { get; set; }
+        public DbSet<AdminUser> AdminUsers { get; set; }
     }
 }
