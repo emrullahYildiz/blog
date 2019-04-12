@@ -45,6 +45,8 @@ namespace blog
             services.AddTransient<ICategory, CategoryContext>();
             services.AddTransient<IArticle, ArticleContext>();
             services.AddTransient<IContact,ContactContext>();
+            services.AddTransient<IUser,UserContext>();
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
