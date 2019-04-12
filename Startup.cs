@@ -39,8 +39,12 @@ namespace blog
             services.AddDbContext<DatabaseContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
                 );
-
-
+            /*Authentication setting */
+            services.AddAuthentication("pan")
+                    .AddCookie("pan",options => { options.AccessDeniedPath = "/Home/Index";
+                                                  options.LoginPath = "/Admin/Index";
+                                                });
+            /* Database processs inject */
             services.AddTransient<IComment, CommentContext>();
             services.AddTransient<ICategory, CategoryContext>();
             services.AddTransient<IArticle, ArticleContext>();
@@ -63,6 +67,7 @@ namespace blog
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
