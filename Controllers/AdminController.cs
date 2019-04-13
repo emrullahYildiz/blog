@@ -60,6 +60,13 @@ namespace blog.Controllers{
             };
             return View(commentsViewModel);
         }
+
+        [Authorize]
+        [Route("/Admin/DeleteComment/{id?}")]
+        public IActionResult DeleteComment(int id){
+            commentContext.DeleteCommentById(id);
+            return Redirect("/Admin/Comments");
+        }
         /*Comment process end */
     }
 }
