@@ -28,6 +28,13 @@ namespace blog.Implementers{
             databaseContext.SaveChanges();
         }
 
+        public void DeleteCommentById(int id)
+        {
+            Comment comment = databaseContext.Comments.SingleOrDefault(q => q.CommentID == id);
+            databaseContext.Comments.Remove(comment);
+            databaseContext.SaveChanges();
+        }
+
         public List<Comment> getLastComments()
         {
             List<Comment> comments;
