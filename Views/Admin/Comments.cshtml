@@ -1,10 +1,11 @@
+@model CommentsViewModel
 @{
     Layout = "_LayoutAdmin";
 }
 
 <div class="row h-100">
     @await Component.InvokeAsync("AdminSidebar")
-    <div class="col-7 col-sm-8 col-md-9 col-lg-10">
+    <div class="col-7 col-sm-8 col-md-9 col-lg-10 bg-light">
 
         <!--Comment search form start-->
         <div class="row justify-content-center">
@@ -23,12 +24,14 @@
 
         <!-- last 10 comment and comment search result -->
         <div class="row p-4">
-            @if(ViewData["state"].Equals("list")){
+            <!--table state desicion start-->
+            @if(ViewData["tableState"].Equals("list")){
                 <p class="mx-auto h4 text-info"><strong>Yapılan son yorumlar</strong></p>
-            }else if (ViewData["state"].Equals("search")){
+            }else if (ViewData["tableState"].Equals("search")){
                 <p class="mx-auto h4 text-info"><strong>Arama sonuçları</strong></p>
             }
-            
+            <!--table state desicion end -->
+
             <table class="table table-sm table-striped table-hover">
                 <thead>
                     <tr>
@@ -41,14 +44,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Emrullah YILDIZ</td>
-                        <td>Blog yorum 1</td>
-                        <td>yildiz.emrullahsadasd</td>
-                        <td>lorem ipsum dolor sit amed</td>
-                        <td class="text-center"><a href="#" class="btn btn-danger">Sil</a></td>
-                    </tr>
+                    <!-- Comments Data start-->
+                    @foreach (var item in Model.comments)
+                    {
+                        <tr>
+                            <th scope="row">@item.CommentID</th>
+                            <td>@item.CommentFullname</td>
+                            <td>@item.CommentContent</td>
+                            <td>@item.CommentMail</td>
+                            <td>@item.Article.ArticleHead</td>
+                            <td class="text-center"><a href="/Admin/DeleteComment/@item.CommentID" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
+                    <!-- Comments data end -->
+
                 </tbody>
             </table>
         </div>
