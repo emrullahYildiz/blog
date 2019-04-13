@@ -1,0 +1,51 @@
+@{
+    Layout = "_LayoutAdmin";
+}
+
+<div class="row h-100">
+    @await Component.InvokeAsync("AdminSidebar")
+    <div class="col-7 col-sm-8 col-md-9 col-lg-10">
+
+        <!--Comment search form start-->
+        <div class="row justify-content-center">
+            <form class="w-75">
+                <table class="table table-sm">
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="form-control form-control-md" placeholder="Makaleye göre yorum ara"></td>
+                            <td><button class="btn btn-info w-50" type="submit">Ara</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <!--Comment search form end-->
+
+        <!-- last 10 comment and comment search result -->
+        <div class="row p-4">
+            <table class="table table-sm table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Adı Soyadı</th>
+                        <th scope="col">Yorum</th>
+                        <th scope="col">Mail</th>
+                        <th scope="col">Makale</th>
+                        <th class="text-center" scope="col">Aksiyon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Emrullah YILDIZ</td>
+                        <td>Blog yorum 1</td>
+                        <td>yildiz.emrullahsadasd</td>
+                        <td>lorem ipsum dolor sit amed</td>
+                        <td class="text-center"><a href="#" class="btn btn-danger">Sil</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
