@@ -105,9 +105,9 @@ namespace blog.Controllers{
             return View(categoryViewModel);
         }
         [Authorize]
-        [Route("/Admin/Category/{categoryId}")]
+        [Route("/Admin/CategoryDelete/{categoryId}")]
         public IActionResult CategoryDelete(int categoryId){
-            
+            categoryContext.DeleteCategory(categoryId);
             return Redirect("/Admin/Category");
         }
         /*Category process  end*/
