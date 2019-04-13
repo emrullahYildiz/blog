@@ -72,3 +72,6 @@ C:\Users\hasan\Desktop\simpleBlog\blog\obj\Debug\netcoreapp2.2\Razor\Views\Share
 C:\Users\hasan\Desktop\simpleBlog\blog\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Navbar\Default.g.cshtml.cs
 C:\Users\hasan\Desktop\simpleBlog\blog\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Index.g.cshtml.cs
 C:\Users\hasan\Desktop\simpleBlog\blog\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutAdmin.g.cshtml.cs
+C:\Users\hasan\Desktop\simpleBlog\blog\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Panel.g.cshtml.cs
+C:\Users\hasan\Desktop\simpleBlog\blog\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\AdminNavbar\Default.g.cshtml.cs
+C:\Users\hasan\Desktop\simpleBlog\blog\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\AdminSidebar\Default.g.cshtml.cs
