@@ -61,12 +61,24 @@ namespace blog.Controllers{
             return View(commentsViewModel);
         }
 
+        //Comment search by article head
+        [Authorize]
+        [HttpPost]
+        public IActionResult Comments(string articleHead){
+            ViewData["tableState"] = "search";
+            CommentsViewModel commentsViewModel = new CommentsViewModel{
+                comments = commentContext.SearchCommentByArticleHead(articleHead)
+            };
+            return View(commentsViewModel);
+        }
+
         [Authorize]
         [Route("/Admin/DeleteComment/{id?}")]
         public IActionResult DeleteComment(int id){
             commentContext.DeleteCommentById(id);
             return Redirect("/Admin/Comments");
         }
+
         /*Comment process end */
     }
 }
