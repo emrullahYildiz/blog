@@ -45,5 +45,13 @@ namespace blog.Implementers{
             }
             return comments;
         }
+
+        public List<Comment> SearchCommentByArticleHead(string articleHead)
+        {
+            List<Comment> comments;
+            comments = databaseContext.Comments.Include(q => q.Article)
+                                      .Where(q => q.Article.ArticleHead.Contains(articleHead)).ToList();
+            return comments;
+        }
     }
 }

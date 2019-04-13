@@ -8,5 +8,7 @@ namespace blog.Interfaces{
         List<Comment> getLastComments();
         void DeleteCommentById(int id);
 
+        List<Comment> SearchCommentByArticleHead(string articleHead);
+
     }
 }
