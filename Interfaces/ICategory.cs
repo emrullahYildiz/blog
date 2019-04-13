@@ -7,5 +7,7 @@ namespace blog.Interfaces{
     public interface ICategory
     {
         List<Category> getCategories();
+
+        void AddCategory(string categoryName);
     }
 }
