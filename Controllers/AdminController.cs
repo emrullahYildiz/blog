@@ -47,7 +47,10 @@ namespace blog.Controllers{
         /*Comment process start */
         [Authorize]
         public IActionResult Comments(){
-            
+            //passed data is last 10 comment
+            //state = list
+            ViewData["tableState"] = "list";
+
             return View();
         }
         /*Comment process end */
