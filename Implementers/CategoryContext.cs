@@ -21,6 +21,13 @@ namespace blog.Implementers{
             context.SaveChanges();
         }
 
+        public void DeleteCategory(int categoryId)
+        {
+            Category category = context.Categories.SingleOrDefault(q => q.CategoryID == categoryId);
+            context.Remove(category);
+            context.SaveChanges();
+        }
+
         public List<Category> getCategories()
         {
             List<Category> categories = context.Categories.ToList();

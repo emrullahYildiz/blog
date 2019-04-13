@@ -9,5 +9,7 @@ namespace blog.Interfaces{
         List<Category> getCategories();
 
         void AddCategory(string categoryName);
+
+        void DeleteCategory(int categoryId);
     }
 }
