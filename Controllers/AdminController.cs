@@ -39,11 +39,17 @@ namespace blog.Controllers{
             return Redirect("/Admin/Panel");
         }
 
-        
         [Authorize]
         public IActionResult Panel(){
 
             return View();
         }
+        /*Comment process start */
+        [Authorize]
+        public IActionResult Comments(){
+            
+            return View();
+        }
+        /*Comment process end */
     }
 }
